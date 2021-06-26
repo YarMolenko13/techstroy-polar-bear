@@ -12,7 +12,9 @@ _, thr = cv2.threshold(bear_hsv_median, 0, 255, cv2.THRESH_OTSU)  # подбир
 # thr_adpt = cv2.adaptiveThreshold(bear_hsv_median, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 121, 25)
 
 
-# cv2.imshow('picture1',bear_bgr[:,:,0])
+cv2.imshow('picture1',bear_bgr[:,:,0])
 cv2.imshow('pic', thr)
 # cv2.imshow('picture2', thr  )
 cv2.waitKey(0)
+
+## закрасить с помощью closexz
