@@ -8,31 +8,24 @@ orig_photo_dir = 'D:/Projects/Python/PolarBear/img/test.png'
 root = Tk()
 root.configure(background = "#B0BA84")
 root.title('Polar bear')
-root.geometry("550x300+300+150")
+# root.geometry("550x300+300+150")
+root.geometry("200x70")
 root.resizable(width=True, height=True)
 
-# button = Button(root, text="Выбери фото", )
-# button.grid(column=0, row=0)
-#
-# root.resizable(width=True, height=True)
-
-def openfn():
-    filename = filedialog.askopenfilename(title='open')
-    return filename
 def open_img():
-    x = openfn()
-    img = Image.open(x)
-    img = img.resize((250, 250), Image.ANTIALIAS)
+    filename = filedialog.askopenfilename(title='open')
+    img = Image.open(filename)
+    root.geometry("700x550")
+    img = img.resize((450, 450), Image.ANTIALIAS)
     img = ImageTk.PhotoImage(img)
-    panel = Label(root, image=img)
+    panel = Label(root, image=img, pady=40)
     panel.image = img
     panel.pack()
 
-btn = Button(root, text='open image', command=open_img).pack()
+btn = Button(root, text="Выбери фото", bg="#266E67", fg="#fff", command=open_img).pack(pady=20)
 
 root.mainloop()
 
-root.mainloop()
 
 
 # window = Tk()
